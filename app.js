@@ -4,7 +4,13 @@ let btn = document.querySelector(".refresh");
 const greetingEl = document.querySelector(".box1 span");
 const dateEl = document.querySelector(".box1 p");
 const timeEl = document.querySelector(".section2 > span:last-child");
-
+const apiKey = "3923d37ee714955072bf74d4ece54310";
+let city = prompt("Enter Your City Name:").trim();
+let cityNode = document.querySelector(".weather-location");
+let tempNode = document.querySelector(".temperature");
+let feelNode = document.querySelector(".current-state");
+let humidityNode = document.querySelector(".humidity");
+let WindNode = document.querySelector(".Wind");
 function updateDashboardDateTime() {
     let username = prompt("Enter Your Name");
     while (username === "") {
@@ -53,8 +59,27 @@ const randomQuote = async () => {
 btn.addEventListener("click", () => {
     randomQuote();
 })
+const updateWeather = async (city) => {
+    const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    const response = await fetch(weatherUrl);
+    const data = await response.json();
+    console.log(data);
+    
+    const humidity = data.main.humidity;
+    const wind = data.wind.speed;
+    const cityName = data.name;
+    const actualtemp = data.main.temp;
+    const description = data.weather[0].description;
+    const feelsLike = data.main.feels_like;
+    cityNode.innerText = `TEMPERATURE . ${cityName}`.toUpperCase();
+    tempNode.innerHTML = `${actualtemp}&deg;`;
+    feelNode.innerText = `${description} . feels like ${feelsLike}°`;
+    humidityNode.innerHTML = ` ${humidity} &percnt;  <br> Humidity`;
+    WindNode.innerHTML = `${wind} km/h <br> wind`
+}
 window.addEventListener("load", () => {
     updateDashboardDateTime();
     randomQuote();
+    updateWeather(city);
 })
 

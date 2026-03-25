@@ -97,7 +97,7 @@ body {
 .section4 {
 
     border-radius: 10px;
-    height: 50vh;
+    height: 34vh;
     display: flex;
     justify-content: space-between;
     gap: 30px;
@@ -117,8 +117,9 @@ body {
     background: linear-gradient(90deg, rgba(15, 15, 24, 1) 0%, rgb(6, 6, 82) 100%);
     display: flex;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: stretch;
     flex-direction: column;
+    gap: 10px;
 }
 
 .streak-section {
@@ -126,6 +127,41 @@ body {
 
 }
 
+.weather-location {
+    font-size: medium;
+    color: #ffffff9b;
+    text-align: left;
+    letter-spacing: 5px;
+}
+
+.temperature {
+    font-size: 50px;
+    font-weight: bolder;
+}
+
+.current-state {
+    color: #ffffff9b;
+    font-size: small;
+}
+
+.humidity-Wind {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    flex-direction: row;
+}
+
+.humidity,
+.Wind {
+    font-size: small;
+    text-align: center;
+    color: #ffffff9b;
+    border: 0.0001px solid #ffffff3d;
+    padding: 10px 45px;
+    background: rgba(0, 0, 0, 0.325);
+    border-radius: 10px;
+}
 
 @media screen and (max-width: 650px) {
     .section1 {
