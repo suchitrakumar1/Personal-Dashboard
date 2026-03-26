@@ -97,7 +97,7 @@ body {
 .section4 {
 
     border-radius: 10px;
-    height: 34vh;
+    /* height: 34vh; */
     display: flex;
     justify-content: space-between;
     gap: 30px;
@@ -147,7 +147,7 @@ body {
 .update-streak-buttons {
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: stretch;
     gap: 5px;
     flex-direction: row;
 }
@@ -164,11 +164,13 @@ body {
     background: rgba(0, 0, 0, 0.325);
     border-radius: 10px;
 }
+
 .increase:hover,
 .decrease:hover,
 .reset:hover {
     color: white;
     cursor: pointer;
+    transform: translateY(-1px);
 }
 
 .slogan {
@@ -207,12 +209,12 @@ body {
     text-align: center;
     color: #ffffff9b;
     border: 0.0001px solid #ffffff3d;
-    padding: 10px 45px;
+    padding: 5px 19px;
     background: rgba(0, 0, 0, 0.325);
     border-radius: 10px;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 1000px) {
     .section1 {
         font-size: small;
         padding: 15px;
@@ -251,5 +253,34 @@ body {
     .refresh {
         font-size: xx-small;
     }
+
+    .section4 {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .weather-section {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .streak-section {
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+
+    }
+
+    .increase,
+    .decrease,
+    .reset {
+        font-size: x-small;
+        padding: 10px 20px;
+
+    }
+
 
 }
