@@ -11,6 +11,28 @@ let tempNode = document.querySelector(".temperature");
 let feelNode = document.querySelector(".current-state");
 let humidityNode = document.querySelector(".humidity");
 let WindNode = document.querySelector(".Wind");
+let streaknumberNode = document.querySelector(".streak-number");
+let increaseNode = document.querySelector(".increase");
+let decreaseNode = document.querySelector(".decrease");
+let resetNode = document.querySelector(".reset");
+let count = 0;
+streaknumberNode.innerText = count;
+increaseNode.addEventListener("click", () => {
+    streaknumberNode.innerText = ++count;
+})
+decreaseNode.addEventListener("click", () => {
+    if (count == 0) {
+        alert("cant decrease below zero");
+    }
+    else {
+        streaknumberNode.innerText = --count;
+    }
+})
+resetNode.addEventListener("click", () => {
+    count = 0;
+    streaknumberNode.innerText = count;
+    
+})
 function updateDashboardDateTime() {
     let username = prompt("Enter Your Name");
     while (username === "") {
@@ -45,7 +67,7 @@ function updateDashboardDateTime() {
     timeEl.textContent = now.toLocaleTimeString("en-US", {
         hour: "2-digit",
         minute: "2-digit",
-        hour12: false
+        hour12: true
     });
 }
 const randomQuote = async () => {
@@ -54,7 +76,6 @@ const randomQuote = async () => {
     let data = await response.json();
     let quote = data.quote;
     para.innerText = `" ${quote} "`;
-    console.log("f");
 }
 btn.addEventListener("click", () => {
     randomQuote();
@@ -64,7 +85,7 @@ const updateWeather = async (city) => {
     const response = await fetch(weatherUrl);
     const data = await response.json();
     console.log(data);
-    
+
     const humidity = data.main.humidity;
     const wind = data.wind.speed;
     const cityName = data.name;
@@ -80,6 +101,11 @@ const updateWeather = async (city) => {
 window.addEventListener("load", () => {
     updateDashboardDateTime();
     randomQuote();
+    cityNode.innerText = `Loading`.toUpperCase();
+    tempNode.innerHTML = `Loading`;
+    feelNode.innerText = `Loading`;
+    humidityNode.innerHTML = `Loading`;
+    WindNode.innerHTML = `Loading`
     updateWeather(city);
 })
 

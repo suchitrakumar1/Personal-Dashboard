@@ -124,7 +124,56 @@ body {
 
 .streak-section {
     background: linear-gradient(90deg, rgb(6, 6, 82) 0%, rgba(15, 15, 24, 1) 100%);
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 10px;
 
+}
+
+.daily {
+    font-size: medium;
+    color: #ffffff9b;
+    text-align: left;
+    letter-spacing: 5px;
+}
+
+.streak-number {
+    font-size: 50px;
+    font-weight: bolder;
+}
+
+.update-streak-buttons {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+    flex-direction: row;
+}
+
+.increase,
+.decrease,
+.reset {
+    font-size: small;
+    text-align: center;
+    color: #ffffff9b;
+    border: 0.0001px solid #ffffff3d;
+    /* padding: 5px 20px; */
+    padding: 19px 45px;
+    background: rgba(0, 0, 0, 0.325);
+    border-radius: 10px;
+}
+.increase:hover,
+.decrease:hover,
+.reset:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.slogan {
+    color: #ffffff9b;
+    font-size: small;
 }
 
 .weather-location {
