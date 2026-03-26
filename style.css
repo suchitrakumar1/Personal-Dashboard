@@ -211,8 +211,62 @@ body {
     background: rgba(0, 0, 0, 0.325);
     border-radius: 10px;
 }
-.section5{
+
+.section5 {
+    background: linear-gradient(90deg, rgba(15, 15, 24, 1) 0%, rgb(6, 6, 82) 100%);
+    /* height: 40vh; */
+    width: 100%;
+    padding: 30px;
+    border: 0.0001px solid #ffffff3d;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.taskaddtask {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+}
+
+.tasks {
+    color: white;
+    font-size: x-large;
+    font-weight: bolder;
+
+}
+.taskaddtask button{
+    padding: 15px 45px;
+    background: transparent;
+    color: #ffffff;
+    border: 0.0001px solid #ffffff;
+    border-radius: 10px;
     
+}
+.taskaddtask button:hover{
+    transform: translateY(-2px);
+    color: grey;
+    cursor: pointer;
+}
+.task-container{
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 10px;
+}
+.task{
+    padding: 20px;
+    border: 0.0001px solid #ffffff3d;
+    border-radius: 5px;
+    color: white;
+    letter-spacing: 1px;
+    text-align: center;
+    background-color: rgb(6, 6, 82);
 }
 
 @media screen and (max-width: 1000px) {
